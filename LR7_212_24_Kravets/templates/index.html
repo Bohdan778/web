@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лаба 7</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h2>Форма</h2>
+
+<form id="myForm" action="/submit" method="POST">
+    
+    <input type="text" name="name" placeholder="Ім'я">
+    
+    <input type="email" name="email" placeholder="Email">
+    
+    <input type="password" name="password" placeholder="Пароль">
+
+    <select name="city">
+        <option value="">Оберіть місто</option>
+        <option value="Lviv">Львів</option>
+        <option value="Kyiv">Київ</option>
+        <option value="Odesa">Одеса</option>
+    </select>
+
+    <textarea name="message" placeholder="Повідомлення"></textarea>
+
+    <button type="submit">Відправити</button>
+
+    <div class="error"></div>
+</form>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

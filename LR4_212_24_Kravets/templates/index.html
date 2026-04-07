@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор знижки</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Калькулятор знижки</h2>
+
+    <form id="form">
+        <input type="text" id="name" placeholder="Ім'я">
+        <input type="email" id="email" placeholder="Email">
+        <input type="number" id="amount" placeholder="Сума покупки">
+
+        <select id="type">
+            <option value="">Тип клієнта</option>
+            <option value="new">Новий (5%)</option>
+            <option value="regular">Постійний (10%)</option>
+            <option value="vip">VIP (20%)</option>
+        </select>
+
+        <button type="submit">Розрахувати</button>
+    </form>
+
+    <h3 id="result"></h3>
+</div>
+
+<!-- JS -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

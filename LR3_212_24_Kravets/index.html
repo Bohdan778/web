@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepairTech</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav">
+        <h1 class="logo">RepairTech</h1>
+        <div class="burger" id="burger">☰</div>
+        <ul class="menu" id="menu">
+            <li><a href="#">Головна</a></li>
+            <li><a href="#">Послуги</a></li>
+            <li><a href="#">Ціни</a></li>
+            <li><a href="#">Замовити</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="hero">
+    <h2>Професійний ремонт техніки</h2>
+    <p>Ноутбуки • Телефони • Телевізори</p>
+    <button class="btn">Замовити ремонт</button>
+</section>
+
+<section class="services">
+    <div class="container">
+        <h2>Наші послуги</h2>
+        <div class="carousel-wrapper">
+            <div class="services-slider" id="services-slider">
+                <div class="card">
+                    <h3>Ремонт ноутбуків</h3>
+                    <p>Діагностика, заміна клавіатури, чистка системи охолодження.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Ремонт смартфонів</h3>
+                    <p>Заміна дисплея, акумулятора, ремонт плати.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Ремонт телевізорів</h3>
+                    <p>Ремонт матриці, блоків живлення та підсвітки.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="prices">
+    <div class="container">
+
+        <h2>Ціни</h2>
+
+        <div class="price-item">
+            <span>Діагностика</span>
+            <span>200 грн</span>
+        </div>
+
+        <div class="price-item">
+            <span>Заміна дисплея</span>
+            <span>від 800 грн</span>
+        </div>
+
+        <div class="price-item">
+            <span>Чистка ноутбука</span>
+            <span>500 грн</span>
+        </div>
+    </div>
+</section>
+
+
+<section class="order">
+    <div class="container">
+        <h2>Замовити ремонт</h2>
+        <form class="form">
+            <input type="text" placeholder="Ваше ім'я">
+            <input type="tel" placeholder="Телефон">
+            <textarea placeholder="Опишіть проблему"></textarea>
+            <button class="btn">Відправити</button>
+        </form>
+    </div>
+</section>
+
+
+<script>
+const burger = document.getElementById("burger")
+const menu = document.getElementById("menu")
+
+burger.addEventListener("click", () => {
+    menu.classList.toggle("active")
+})
+
+const slider = document.getElementById("services-slider")
+const cards = Array.from(slider.children)
+cards.forEach(card => {
+    const clone = card.cloneNode(true)
+    slider.appendChild(clone)
+})
+
+</script>
+</body>
+</html>
