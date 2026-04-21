@@ -2,37 +2,40 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Лаба 7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма реєстрації</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+<div class="container">
+    <div class="card">
 
-<h2>Форма</h2>
-
-<form id="myForm" action="/submit" method="POST">
-    
-    <input type="text" name="name" placeholder="Ім'я">
-    
-    <input type="email" name="email" placeholder="Email">
-    
-    <input type="password" name="password" placeholder="Пароль">
-
-    <select name="city">
-        <option value="">Оберіть місто</option>
-        <option value="Lviv">Львів</option>
-        <option value="Kyiv">Київ</option>
-        <option value="Odesa">Одеса</option>
-    </select>
-
-    <textarea name="message" placeholder="Повідомлення"></textarea>
-
-    <button type="submit">Відправити</button>
-
+    <h2>Реєстрація</h2>
+    <p class="subtitle">Заповніть форму, щоб завершити реєстрацію.</p>
     <div class="error"></div>
-</form>
 
-<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <form id="myForm" action="/submit" method="POST">
+        <input type="text" name="name" placeholder="Ім'я (обов'язково)">
+        <input type="email" name="email" placeholder="Email (обов'язково)">
+        <input type="password" name="password" placeholder="Пароль (обов'язково)">
+        
+        <select name="city">
+            <option value="">Оберіть місто...</option>
+            <option value="Київ">Київ</option>
+            <option value="Львів">Львів</option>
+            <option value="Одеса">Одеса</option>
+        </select>
+        
+        <textarea name="message" placeholder="Ваше повідомлення" rows="4"></textarea>
+        
+        <button type="submit">Відправити</button>
+    </form>
+    </div>
+</div>
+
+    <!-- Спочатку підключаємо jQuery, а вже потім наш main.js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 </body>
 </html>

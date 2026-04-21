@@ -6,7 +6,6 @@ from werkzeug.security import generate_password_hash
 
 app = Flask(__name__)
 
-# створення БД
 def init_db():
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
@@ -42,7 +41,6 @@ def submit():
     city = html.escape(request.form.get('city', ''))
     message = html.escape(request.form.get('message', '').strip())
 
-    # 🔒 валідація
     if not name or not email or not password or not city:
         return "Помилка: заповніть всі поля"
 
@@ -52,10 +50,9 @@ def submit():
     if len(password) < 6:
         return "Пароль мінімум 6 символів"
 
-    # Хешування пароля (безпека від витоку даних)
+
     hashed_password = generate_password_hash(password)
 
-    # запис в БД (параметризовані запити - аналог PDO)
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
 
